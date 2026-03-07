@@ -425,7 +425,7 @@ if vista == "Entrenamiento":
         st.divider()
         st.write("## Umbral recomendado (para decisión operativa)")
         st.code(f"{m['umbral_recomendado']:.6f}")
-        st.caption("Se calcula maximizando F1 en el conjunto de prueba.")
+        # st.caption("Se calcula maximizando F1 en el conjunto de prueba.")
 
         st.divider()
         st.write("## Matriz de confusión (umbral recomendado)")
