@@ -419,8 +419,8 @@ if vista == "Entrenamiento":
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Registros entrenamiento", m["n_train"])
         c2.metric("Registros prueba", m["n_test"])
-        c3.metric("AUC ROC", f"{m['roc_auc']:.3f}" if m["roc_auc"] is not None else "N/A")
-        c4.metric("AP (Precisión-Recall)", f"{m['avg_precision']:.3f}" if m["avg_precision"] is not None else "N/A")
+        # c3.metric("AUC ROC", f"{m['roc_auc']:.3f}" if m["roc_auc"] is not None else "N/A")
+        # c4.metric("AP (Precisión-Recall)", f"{m['avg_precision']:.3f}" if m["avg_precision"] is not None else "N/A")
 
         st.divider()
         st.write("## Umbral recomendado (para decisión operativa)")
