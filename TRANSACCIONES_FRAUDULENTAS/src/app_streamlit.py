@@ -428,14 +428,21 @@ if vista == "Entrenamiento":
         # st.caption("Se calcula maximizando F1 en el conjunto de prueba.")
 
         st.divider()
-        st.write("## Matriz de confusión (umbral recomendado)")
+        st.write("## Matriz de confusión")
         matriz = m["matriz_confusion_optimo"]
         df_matriz = pd.DataFrame(matriz, index=["Real 0", "Real 1"], columns=["Pred 0", "Pred 1"])
         st.dataframe(df_matriz, use_container_width=True)
 
         st.divider()
-        st.write("## Reporte (umbral recomendado)")
+        st.write("## Reporte")
         reporte_df = pd.DataFrame(m["reporte_optimo"]).T
+
+        # --- FILTRO PARA QUITAR LAS FILAS SOBRANTES ---
+        # Solo mantenemos las filas que corresponden a las clases '0' y '1'
+        filas_a_mantener = ["0", "1"]
+        reporte_df = reporte_df.loc[reporte_df.index.isin(filas_a_mantener)]
+        # -----------------------------------------------
+
         st.dataframe(reporte_df, use_container_width=True)
 
         st.divider()
